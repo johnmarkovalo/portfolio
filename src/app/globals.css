@@ -1,0 +1,165 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════
+   SYMFLO PORTFOLIO — DESIGN SYSTEM TOKENS
+   ═══════════════════════════════════════════════ */
+
+@theme inline {
+  --color-background: var(--bg-primary);
+  --color-foreground: var(--text-primary);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* Brand */
+  --color-primary: #6366F1;
+  --color-primary-light: #818CF8;
+  --color-primary-dark: #4F46E5;
+
+  /* Product Accents */
+  --color-accent-blue: #3B82F6;
+  --color-accent-emerald: #10B981;
+  --color-accent-amber: #F59E0B;
+  --color-accent-violet: #8B5CF6;
+  --color-accent-red: #EF4444;
+}
+
+/* ── Dark Theme (Default) ── */
+:root {
+  --bg-primary: #09090B;
+  --bg-secondary: #18181B;
+  --bg-tertiary: #27272A;
+  --surface: #1C1C1F;
+  --surface-hover: #27272A;
+  --text-primary: #FAFAFA;
+  --text-secondary: #A1A1AA;
+  --text-tertiary: #71717A;
+  --border: #27272A;
+  --border-hover: #3F3F46;
+}
+
+/* ── Light Theme ── */
+[data-theme="light"] {
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #FAFAFA;
+  --bg-tertiary: #F4F4F5;
+  --surface: #FFFFFF;
+  --surface-hover: #F4F4F5;
+  --text-primary: #09090B;
+  --text-secondary: #52525B;
+  --text-tertiary: #A1A1AA;
+  --border: #E4E4E7;
+  --border-hover: #D4D4D8;
+}
+
+/* ── Base Styles ── */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: #6366F1;
+  color: white;
+}
+
+/* ── Gradient Mesh Background ── */
+.gradient-mesh {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.gradient-mesh::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+      ellipse 600px 600px at 30% 20%,
+      rgba(99, 102, 241, 0.12) 0%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 400px 400px at 70% 60%,
+      rgba(139, 92, 246, 0.08) 0%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 500px 500px at 50% 80%,
+      rgba(59, 130, 246, 0.06) 0%,
+      transparent 70%
+    );
+  animation: meshFloat 20s ease-in-out infinite alternate;
+}
+
+[data-theme="light"] .gradient-mesh::before {
+  background: radial-gradient(
+      ellipse 600px 600px at 30% 20%,
+      rgba(99, 102, 241, 0.07) 0%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 400px 400px at 70% 60%,
+      rgba(139, 92, 246, 0.05) 0%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 500px 500px at 50% 80%,
+      rgba(59, 130, 246, 0.04) 0%,
+      transparent 70%
+    );
+}
+
+@keyframes meshFloat {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(-2%, 2%) rotate(1deg);
+  }
+}
+
+/* ── Dot Grid Overlay ── */
+.dot-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(
+    circle,
+    var(--text-tertiary) 0.5px,
+    transparent 0.5px
+  );
+  background-size: 24px 24px;
+  opacity: 0.04;
+}
+
+/* ── Section Utility ── */
+.section-spacing {
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+@media (max-width: 768px) {
+  .section-spacing {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+}
+
+/* ── Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .gradient-mesh::before {
+    animation: none;
+  }
+}
