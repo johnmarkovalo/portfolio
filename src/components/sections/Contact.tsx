@@ -26,7 +26,7 @@ export function Contact() {
         <FadeUp delay={0.15}>
           <a
             href={`mailto:${siteConfig.email}`}
-            className="mt-8 inline-flex items-center gap-2 rounded-xl border border-[var(--border)] bg-[var(--surface)] px-6 py-4 text-lg font-medium transition-all hover:border-primary/40 hover:shadow-[0_0_30px_rgba(99,102,241,0.08)]"
+            className="mt-8 inline-flex items-center gap-2 rounded-xl border border-[var(--border)] bg-[var(--surface)] px-6 py-4 text-lg font-medium transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_0_30px_rgba(99,102,241,0.12)]"
           >
             <Mail size={20} className="text-primary" />
             {siteConfig.email}

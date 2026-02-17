@@ -47,9 +47,17 @@ export function TechStack() {
       </FadeUp>
 
       <Stagger className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {stackCategories.map((category) => (
-          <StaggerItem key={category.label}>
-            <div className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6">
+        {stackCategories.map((category, i) => (
+          <StaggerItem
+            key={category.label}
+            className={
+              i === stackCategories.length - 1 &&
+              stackCategories.length % 3 === 1
+                ? "lg:col-start-2"
+                : undefined
+            }
+          >
+            <div className="h-full rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--border-hover)] hover:bg-[var(--surface-hover)]">
               <h3 className="mb-4 font-mono text-xs uppercase tracking-widest text-primary">
                 {category.label}
               </h3>

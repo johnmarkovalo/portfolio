@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { FlowingWaves } from "@/components/ui/FlowingWaves";
 
 const stats = [
   { value: "7+", label: "Years Experience" },
@@ -15,6 +16,7 @@ export function Hero() {
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 pt-16 md:px-12 lg:px-16">
       {/* Background Effects */}
       <div className="gradient-mesh" />
+      <FlowingWaves />
       <div className="dot-grid" />
 
       <div className="relative z-10 mx-auto max-w-6xl">

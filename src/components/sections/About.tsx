@@ -82,8 +82,8 @@ export function About() {
           const Icon = value.icon;
           return (
             <StaggerItem key={value.title}>
-              <div className="rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6 transition-colors hover:border-[var(--border-hover)]">
-                <div className="mb-4 inline-flex rounded-lg bg-primary/10 p-2.5">
+              <div className="group rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--border-hover)] hover:bg-[var(--surface-hover)]">
+                <div className="mb-4 inline-flex rounded-lg bg-primary/10 p-2.5 transition-transform duration-300 group-hover:scale-110">
                   <Icon size={20} className="text-primary" />
                 </div>
                 <h3 className="text-lg font-semibold tracking-tight">

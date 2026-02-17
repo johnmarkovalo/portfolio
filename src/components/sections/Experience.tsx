@@ -20,12 +20,14 @@ export function Experience() {
 
       {/* Timeline */}
       <Stagger className="relative space-y-8">
-        {/* Vertical line */}
-        <div className="absolute top-2 bottom-2 left-[19px] hidden w-px bg-[var(--border)] sm:block" />
+        {/* Wavy timeline line */}
+        <div className="timeline-wave-line absolute top-8 bottom-8 left-[13px] hidden w-[14px] sm:block" aria-hidden="true">
+          <div className="timeline-wave-glow absolute inset-0" />
+        </div>
 
         {experiences.map((exp) => (
           <StaggerItem key={exp.company}>
-            <div className="group relative rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6 transition-colors hover:border-[var(--border-hover)] sm:ml-12">
+            <div className="group relative rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--border-hover)] hover:bg-[var(--surface-hover)] sm:ml-12">
               {/* Timeline dot */}
               <div className="absolute top-8 -left-[25px] hidden h-3 w-3 rounded-full border-2 border-primary bg-[var(--bg-primary)] sm:block" />
 

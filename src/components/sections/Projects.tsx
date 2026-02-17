@@ -18,9 +18,11 @@ function ProjectCard({ project }: { project: Project }) {
         } as React.CSSProperties
       }
       whileHover={{
+        y: -4,
         boxShadow: `0 0 40px ${project.accentColor}10`,
         borderColor: `${project.accentColor}40`,
       }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
     >
       {/* Screenshot Placeholder */}
       <div className="relative h-48 w-full overflow-hidden bg-[var(--bg-secondary)] sm:h-56">
@@ -120,9 +122,11 @@ export function Projects() {
               } as React.CSSProperties
             }
             whileHover={{
+              y: -4,
               boxShadow: `0 0 40px ${featuredProject.accentColor}10`,
               borderColor: `${featuredProject.accentColor}40`,
             }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
           >
             <div className="grid md:grid-cols-2">
               {/* Screenshot Placeholder */}
