@@ -9,4 +9,5 @@ export interface Project {
   tags: string[];
   highlights: string[];
   stack: string[];
+  image?: string;
 }

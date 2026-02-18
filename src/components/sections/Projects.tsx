@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Section, SectionHeader } from "@/components/ui/Section";
 import { Badge } from "@/components/ui/Badge";
@@ -24,16 +25,26 @@ function ProjectCard({ project }: { project: Project }) {
       }}
       transition={{ duration: 0.3, ease: "easeOut" }}
     >
-      {/* Screenshot Placeholder */}
+      {/* Screenshot */}
       <div className="relative h-48 w-full overflow-hidden bg-[var(--bg-secondary)] sm:h-56">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div
-            className="text-5xl font-bold opacity-[0.06]"
-            style={{ color: project.accentColor }}
-          >
-            {project.name}
+        {project.image ? (
+          <Image
+            src={project.image}
+            alt={`${project.name} screenshot`}
+            fill
+            className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div
+              className="text-5xl font-bold opacity-[0.06]"
+              style={{ color: project.accentColor }}
+            >
+              {project.name}
+            </div>
           </div>
-        </div>
+        )}
         {/* Gradient overlay at bottom */}
         <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[var(--surface)] to-transparent" />
 
@@ -129,16 +140,26 @@ export function Projects() {
             transition={{ duration: 0.3, ease: "easeOut" }}
           >
             <div className="grid md:grid-cols-2">
-              {/* Screenshot Placeholder */}
+              {/* Screenshot */}
               <div className="relative h-48 overflow-hidden bg-[var(--bg-secondary)] md:h-auto md:min-h-[280px]">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div
-                    className="text-5xl font-bold opacity-[0.06]"
-                    style={{ color: featuredProject.accentColor }}
-                  >
-                    {featuredProject.name}
+                {featuredProject.image ? (
+                  <Image
+                    src={featuredProject.image}
+                    alt={`${featuredProject.name} screenshot`}
+                    fill
+                    className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div
+                      className="text-5xl font-bold opacity-[0.06]"
+                      style={{ color: featuredProject.accentColor }}
+                    >
+                      {featuredProject.name}
+                    </div>
                   </div>
-                </div>
+                )}
                 {/* Number badge */}
                 <div className="absolute top-4 left-4 font-mono text-xs text-[var(--text-tertiary)]">
                   _{featuredProject.number}

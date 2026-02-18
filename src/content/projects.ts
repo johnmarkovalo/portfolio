@@ -10,6 +10,7 @@ export const projects: Project[] = [
       "A technology-first travel platform that delivers sub-2-minute flight booking, transparent all-in pricing, and self-service corporate dashboards. Built to replace fragmented, manual processes in the Philippine travel industry.",
     category: "SaaS \u00B7 Travel",
     accentColor: "#3B82F6",
+    image: "/images/projects/prompttix.png",
     tags: ["Laravel", "Vue.js", "PostgreSQL", "Amadeus GDS"],
     highlights: [
       "Sub-2-minute booking flow",
@@ -27,6 +28,7 @@ export const projects: Project[] = [
       "A multi-tenant HR and payroll platform purpose-built for Philippine businesses. Handles SSS, PhilHealth, Pag-IBIG, and BIR compliance out of the box \u2014 so business owners can focus on their people, not paperwork.",
     category: "SaaS \u00B7 HR & Payroll",
     accentColor: "#10B981",
+    image: "/images/projects/payfolk.png",
     tags: ["Laravel", "Vue.js", "MySQL", "Redis"],
     highlights: [
       "One-click batch payroll generation",
@@ -44,6 +46,7 @@ export const projects: Project[] = [
       "A privacy-first expense tracker powered by on-device AI. Type \u2018Jollibee 250\u2019 and it just works \u2014 categorized, recorded, and analyzed without ever leaving your phone. Built for Filipinos who want simple money tracking.",
     category: "Mobile \u00B7 AI",
     accentColor: "#F59E0B",
+    image: "/images/projects/pitaka-ph.png",
     tags: ["React Native", "Expo", "SQLite", "ONNX"],
     highlights: [
       "< 5 second natural language entry",
