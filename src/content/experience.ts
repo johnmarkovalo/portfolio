@@ -34,6 +34,32 @@ export const experiences: Experience[] = [
       "Laravel",
       "TypeScript",
     ],
+    projects: [
+      {
+        name: "VOCPhone Mobile",
+        description:
+          "VoIP calling, messaging, SMS & video conferencing app — SIP/JSSIP engine, Matrix chat, WatermelonDB offline persistence, and 4 push notification handlers",
+        tags: ["React Native", "Redux", "JSSIP", "Matrix SDK"],
+      },
+      {
+        name: "VOCPhone Desktop",
+        description:
+          "Desktop counterpart mirroring mobile features — Lit web components with 14 context providers, IPC multi-window architecture, and Playwright E2E tests",
+        tags: ["Electron", "Lit", "WatermelonDB", "JSSIP"],
+      },
+      {
+        name: "VOCPhone Presence",
+        description:
+          "Real-time WebSocket broadcasting hub — BLF status mapping, Redis cache-first strategy, and private channels for CRM integrations (Salesforce, HubSpot)",
+        tags: ["Laravel 11", "Laravel Reverb", "Redis"],
+      },
+      {
+        name: "VOC Auth",
+        description:
+          "Authentication portal with 7 auth flows — QR code login, email/TOTP 2FA, device registration, Jitsi JWT, and multi-database user config assembly",
+        tags: ["Laravel 10", "Sanctum", "JWT"],
+      },
+    ],
   },
   {
     company: "Zian Gaming Recreation, Inc",
@@ -66,6 +92,38 @@ export const experiences: Experience[] = [
       "Continuously shipping new features and improving performance across the entire product suite",
     ],
     stack: ["Laravel", "Vue.js", "React Native", "Expo", "MySQL", "Linux", "Redis"],
+    projects: [
+      {
+        name: "BettingApp",
+        description:
+          "Offline-first mobile betting app for field agents — local SQLite storage, thermal receipt printing, and background sync to cloud",
+        tags: ["React Native", "TypeScript", "SQLite", "Redux"],
+      },
+      {
+        name: "ZianAdmin",
+        description:
+          "Back-office admin portal with full HR/Finance suite — payroll, DTR, leave management, inventory, vouchers, and real-time transaction monitoring",
+        tags: ["Laravel 12", "Vue 3", "Tailwind CSS"],
+      },
+      {
+        name: "Zian API",
+        description:
+          "Central REST API and single source of truth — handles all transactions, auto-scrapes lottery results, and syncs sold-out combinations",
+        tags: ["Laravel", "MySQL", "Sanctum"],
+      },
+      {
+        name: "Monitoring App",
+        description:
+          "Read-only stakeholder dashboard showing gross/net metrics, draw results, and high-bet alerts across municipalities",
+        tags: ["Expo", "React Native", "TypeScript"],
+      },
+      {
+        name: "STL System",
+        description:
+          "Batch ticket generator for pre-printed lottery booklets — randomized bet numbers with multi-draw and multi-bet-type support",
+        tags: ["Laravel 11", "Vue 3", "SQLite"],
+      },
+    ],
   },
   {
     company: "DreamersPH",
@@ -86,6 +144,13 @@ export const experiences: Experience[] = [
       "Built and maintained production web applications over 5+ years",
     ],
     stack: ["PHP", "Laravel", "JavaScript", "MySQL"],
+    projects: [
+      {
+        name: "Client Web Application",
+        description: "Production web application built and maintained over 5+ years",
+        tags: ["PHP", "Laravel", "JavaScript"],
+      },
+    ],
   },
   {
     company: "SecureLife International Corporation",
@@ -104,6 +169,13 @@ export const experiences: Experience[] = [
       "Built member dashboards for tracking earnings, recruitment, and rank progression",
     ],
     stack: ["PHP", "Laravel", "JavaScript", "MySQL", "jQuery"],
+    projects: [
+      {
+        name: "MLM Platform",
+        description: "Multi-level marketing platform with referral tree & commission engine",
+        tags: ["PHP", "Laravel", "MySQL"],
+      },
+    ],
   },
 ];
 

@@ -1,3 +1,10 @@
+export interface ExperienceProject {
+  name: string;
+  description: string;
+  url?: string;
+  tags: string[];
+}
+
 export interface Experience {
   company: string;
   location: string;
@@ -5,6 +12,7 @@ export interface Experience {
   roles: Role[];
   highlights: string[];
   stack: string[];
+  projects?: ExperienceProject[];
 }
 
 export interface Role {

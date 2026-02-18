@@ -277,13 +277,57 @@ body {
   }
 }
 
+/* ── Tech Logo Carousel ── */
+.tech-carousel-container {
+  position: relative;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+}
+
+.tech-carousel-track {
+  display: flex;
+  width: max-content;
+  animation: techCarouselScroll var(--carousel-duration, 30s) linear infinite;
+}
+
+.tech-carousel-slow { --carousel-duration: 45s; }
+.tech-carousel-normal { --carousel-duration: 30s; }
+.tech-carousel-fast { --carousel-duration: 20s; }
+
+@keyframes techCarouselScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.tech-carousel-container:hover .tech-carousel-track {
+  animation-play-state: paused;
+}
+
 /* ── Reduced Motion ── */
 @media (prefers-reduced-motion: reduce) {
   .gradient-mesh::before,
   .flowing-wave-1,
   .flowing-wave-2,
   .flowing-wave-3,
-  .timeline-wave-line > .timeline-wave-glow {
+  .timeline-wave-line > .timeline-wave-glow,
+  .tech-carousel-track {
     animation: none;
+  }
+
+  .tech-carousel-container {
+    overflow-x: auto;
   }
 }

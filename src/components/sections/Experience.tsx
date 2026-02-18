@@ -1,10 +1,10 @@
 "use client";
 
-import { Briefcase } from "lucide-react";
+import { Briefcase, ExternalLink } from "lucide-react";
 import { Section, SectionHeader } from "@/components/ui/Section";
 import { FadeUp } from "@/components/motion/FadeUp";
 import { Stagger, StaggerItem } from "@/components/motion/Stagger";
-import { Badge } from "@/components/ui/Badge";
+import { TechCarousel } from "@/components/ui/TechCarousel";
 import { experiences } from "@/content/experience";
 
 export function Experience() {
@@ -91,11 +91,56 @@ export function Experience() {
                 ))}
               </ul>
 
-              {/* Tech Stack */}
-              <div className="mt-4 flex flex-wrap gap-1.5">
-                {exp.stack.map((tech) => (
-                  <Badge key={tech}>{tech}</Badge>
-                ))}
+              {/* Deployed Projects */}
+              {exp.projects && exp.projects.length > 0 && (
+                <div className="mt-4">
+                  <span className="mb-2 block font-mono text-xs uppercase tracking-widest text-[var(--text-tertiary)]">
+                    Deployed Work
+                  </span>
+                  <div className="grid gap-2 sm:grid-cols-2">
+                    {exp.projects.map((project) => (
+                      <div
+                        key={project.name}
+                        className="rounded-lg border border-[var(--border)] bg-[var(--bg-secondary)] p-3 transition-colors hover:border-[var(--border-hover)]"
+                      >
+                        <div className="flex items-center gap-2">
+                          <h4 className="text-sm font-medium text-[var(--text-primary)]">
+                            {project.name}
+                          </h4>
+                          {project.url && (
+                            <a
+                              href={project.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-[var(--text-tertiary)] transition-colors hover:text-primary"
+                              aria-label={`Visit ${project.name}`}
+                            >
+                              <ExternalLink size={12} />
+                            </a>
+                          )}
+                        </div>
+                        <p className="mt-1 text-xs text-[var(--text-tertiary)]">
+                          {project.description}
+                        </p>
+                        <div className="mt-2 flex flex-wrap gap-1">
+                          {project.tags.map((tag) => (
+                            <span
+                              key={tag}
+                              className="inline-flex items-center rounded bg-[var(--bg-tertiary)] px-1.5 py-0.5 font-mono text-[10px] text-[var(--text-tertiary)]"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Tech Stack Carousel */}
+              <div className="mt-4">
+                <TechCarousel items={exp.stack} speed="fast" iconSize={18} />
               </div>
             </div>
           </StaggerItem>
